@@ -9,7 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "server": "nodemon server.js",
-    "start": "npm run build && npm run  server"
+    "start": "npm run  server"
   },
   "dependencies": {
     "@types/codemirror": "^5.60.15",
