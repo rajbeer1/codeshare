@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.CodeMirror{
+  min-height: 90vh;
+  max-height: '500px';
+ max-width: '100%';
+}
