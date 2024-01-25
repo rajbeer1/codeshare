@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 import Avatar from 'react-avatar'
 
 const Client = ({ name }) => {

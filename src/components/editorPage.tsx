@@ -1,4 +1,5 @@
-import  { useEffect, useRef, useState } from 'react';
+// @ts-nocheck
+import { useEffect, useRef, useState } from 'react';
 import Client from './client';
 import Editor from './editor';
 import { useParams } from 'react-router-dom';

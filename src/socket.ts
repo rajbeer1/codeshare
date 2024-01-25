@@ -8,5 +8,5 @@ export const initSocket = async () => {
         transports: ['websocket'],
     };
     
-    return io(import.meta.env.VITE_endpoint, options);
+    return io('codeshare-back-production.up.railway.app', options);
 };
