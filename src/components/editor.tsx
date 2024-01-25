@@ -28,6 +28,7 @@ const Editor = ({ socketRef, roomID ,oncode}) => {
       editorref.current.setSize(editorWidth, 400);
       editorref.current.on('change', (instance, changes) => {
         const { origin } = changes;
+        console.log(origin)
         const code = instance.getValue();
         oncode(code)
     if (origin !== 'setValue' && origin !== 'remote') {

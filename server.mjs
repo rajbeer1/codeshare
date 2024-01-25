@@ -1,8 +1,11 @@
+/* eslint-disable no-undef */
 import express  from "express"
 const app = express()
-import path from 'path';
-import { fileURLToPath } from 'url';
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+import dotenv from 'dotenv'
+dotenv.config()
+ import path from 'path';
+ import { fileURLToPath } from 'url';
+ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 import http from 'http'
 import { Server } from "socket.io"
@@ -11,9 +14,9 @@ const server = http.createServer(app)
 const io = new Server(server)
 const usersocketmap = {}
 app.use(express.static('dist'));
-app.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
+ app.use((req, res, next) => {
+   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+ });
 function getAllConnectedClients(roomID) {
   return Array.from(io.sockets.adapter.rooms.get(roomID) || []).map(
     (socketId) => {
@@ -60,6 +63,8 @@ io.on('connection', (socket) => {
       socket.leave();
     });
 })
+const port = process.env.PORT
 
-
-server.listen(5002)
+server.listen(port, () => {
+  console.log(port)
+})
